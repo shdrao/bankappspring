@@ -5,26 +5,34 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-<!-- 	<bean id="bankAccountRepository"
+	<!-- <bean id="bankAccountRepository" class="com.capgemini.repository.impl.BankAccountRepositoryImpl"> 
+		</bean> <bean id="bankAccountService" class="com.capgemini.service.impl.BankAccountServiceImpl"> 
+		<property name="bankAccountRepository" ref="bankAccountRepository"> </property> 
+		<constructor-arg index="0" ref="bankAccountRepository"></constructor-arg> 
+		</bean> <bean id="bankAccountController" class="com.capgemini.controller.BankAccountController"> 
+		<constructor-arg index="0" ref="bankAccountService"></constructor-arg> </bean> -->
+	<!-- <context:annotation-config> -->
+	<!-- </context:annotation-config> <context:component-scan base-package="com.capgemini"></context:component-scan> -->
+<!-- 	<bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/idbibank"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
+
+	<bean id="bankRepository"
 		class="com.capgemini.repository.impl.BankAccountRepositoryImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	
+	</bean> -->
 
-	</bean>
-	<bean id="bankAccountService"
-		class="com.capgemini.service.impl.BankAccountServiceImpl">
-		<property name="bankAccountRepository" ref="bankAccountRepository"> 
-			</property>
-		<constructor-arg index="0" ref="bankAccountRepository"></constructor-arg>
-	</bean>
-
-	<bean id="bankAccountController"
-		class="com.capgemini.controller.BankAccountController">
-		<constructor-arg index="0" ref="bankAccountService"></constructor-arg>
-
-	</bean>
- -->
- <!-- <context:annotation-config>
-  -->
- <!-- </context:annotation-config>
- <context:component-scan base-package="com.capgemini"></context:component-scan> -->
 
 </beans>
